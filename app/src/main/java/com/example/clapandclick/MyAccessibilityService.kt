@@ -70,7 +70,6 @@ class MyAccessibilityService: AccessibilityService() {
                 )
 
                 if (clickPerformed) {
-                    // Re-enable the ImageView after the click
                     pointerImg.postDelayed({
                         setIsClickable(true, pointerImg)
                     }, 500) // Delay the re-enabling to allow time for the click to complete
