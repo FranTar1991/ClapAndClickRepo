@@ -71,7 +71,7 @@ class MyAccessibilityService: AccessibilityService() {
                 if (clickPerformed) {
                     pointerImg.postDelayed({
                         setIsClickable(true, pointerImg)
-                    }, 500) // Delay the re-enabling to allow time for the click to complete
+                    }, 500)
                 }
             }
         }
@@ -81,7 +81,7 @@ class MyAccessibilityService: AccessibilityService() {
     fun performGlobalClick(x: Int, y: Int): Boolean {
 
         val clickPath = Path()
-        clickPath.moveTo(x.toFloat(), y.toFloat()) // Coordinates for the click
+        clickPath.moveTo(x.toFloat(), y.toFloat()) // Coordinates
         val gestureBuilder = GestureDescription.Builder()
         gestureBuilder.addStroke(StrokeDescription(clickPath, 0, 100))
        return dispatchGesture(gestureBuilder.build(), null, null)
@@ -98,11 +98,11 @@ class MyAccessibilityService: AccessibilityService() {
     }
 
     private fun createFloatingWidget() {
-        // Inflate your widget layout
+
         floatingWidget = LayoutInflater.from(this).inflate(R.layout.floating_widget, null)
         pointerImg = floatingWidget.findViewById(R.id.pointer_Img)
 
-        // Configure the layout parameters for the widget
+
         layoutParams = WindowManager.LayoutParams(
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.WRAP_CONTENT,
@@ -113,8 +113,7 @@ class MyAccessibilityService: AccessibilityService() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT
         )
-
-        // Initial position
+        
         layoutParams.gravity = Gravity.TOP or Gravity.LEFT
         layoutParams.x = 0
         layoutParams.y = 0
