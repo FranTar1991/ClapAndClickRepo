@@ -41,7 +41,7 @@ class MyAccessibilityService: AccessibilityService() {
 
     override fun onDestroy() {
         super.onDestroy()
-        unregisterReceiver(broadcastReceiver)  // Don't forget to unregister the receiver
+        unregisterReceiver(broadcastReceiver)
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
@@ -54,23 +54,21 @@ class MyAccessibilityService: AccessibilityService() {
 
     private val broadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            println("FrankLogs: command")
+
             val statusBarHeight = getStatusBarHeight()
             val navigationBarHeight = getNavigationBarHeight()
             val toCenterPoint = ((48f * density)/ 2).toInt()
 
             pointerImg.post {
-                // Make the ImageView untouchable and non-movable
                 setIsClickable(false, pointerImg)
 
-                // Perform global click
+                // click
                 val clickPerformed = performGlobalClick(
                     layoutParams.x - (toCenterPoint / 2),
                     layoutParams.y + navigationBarHeight - (toCenterPoint / 2)
                 )
 
                 if (clickPerformed) {
-                    // Re-enable the ImageView after the click
                     pointerImg.postDelayed({
                         setIsClickable(true, pointerImg)
                     }, 500) // Delay the re-enabling to allow time for the click to complete
