@@ -72,7 +72,7 @@ class MyAccessibilityService: AccessibilityService() {
                 if (clickPerformed) {
                     pointerImg.postDelayed({
                         setIsClickable(true, pointerImg)
-                    }, 500) // Delay the re-enabling to allow time for the click to complete
+                    }, 500)
                 }
             }
         }
