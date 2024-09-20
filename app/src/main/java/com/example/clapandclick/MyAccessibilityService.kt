@@ -114,8 +114,7 @@ class MyAccessibilityService: AccessibilityService() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT
         )
-
-        // Initial position
+        
         layoutParams.gravity = Gravity.TOP or Gravity.LEFT
         layoutParams.x = 0
         layoutParams.y = 0
