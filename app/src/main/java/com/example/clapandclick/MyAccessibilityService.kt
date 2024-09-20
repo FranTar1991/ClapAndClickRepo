@@ -62,14 +62,13 @@ class MyAccessibilityService: AccessibilityService() {
             pointerImg.post {
                 setIsClickable(false, pointerImg)
 
-                // Perform global click
+                // click
                 val clickPerformed = performGlobalClick(
                     layoutParams.x - (toCenterPoint / 2),
                     layoutParams.y + navigationBarHeight - (toCenterPoint / 2)
                 )
 
                 if (clickPerformed) {
-                    // Re-enable the ImageView after the click
                     pointerImg.postDelayed({
                         setIsClickable(true, pointerImg)
                     }, 500) // Delay the re-enabling to allow time for the click to complete
