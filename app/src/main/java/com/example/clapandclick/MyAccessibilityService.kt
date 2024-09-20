@@ -41,7 +41,7 @@ class MyAccessibilityService: AccessibilityService() {
 
     override fun onDestroy() {
         super.onDestroy()
-        unregisterReceiver(broadcastReceiver)  
+        unregisterReceiver(broadcastReceiver)
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
@@ -54,7 +54,7 @@ class MyAccessibilityService: AccessibilityService() {
 
     private val broadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            println("FrankLogs: command")
+   
             val statusBarHeight = getStatusBarHeight()
             val navigationBarHeight = getNavigationBarHeight()
             val toCenterPoint = ((48f * density)/ 2).toInt()
