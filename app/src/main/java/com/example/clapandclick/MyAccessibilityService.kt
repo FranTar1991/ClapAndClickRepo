@@ -82,7 +82,7 @@ class MyAccessibilityService: AccessibilityService() {
     fun performGlobalClick(x: Int, y: Int): Boolean {
 
         val clickPath = Path()
-        clickPath.moveTo(x.toFloat(), y.toFloat()) // Coordinates for the click
+        clickPath.moveTo(x.toFloat(), y.toFloat()) // Coordinates
         val gestureBuilder = GestureDescription.Builder()
         gestureBuilder.addStroke(StrokeDescription(clickPath, 0, 100))
        return dispatchGesture(gestureBuilder.build(), null, null)
