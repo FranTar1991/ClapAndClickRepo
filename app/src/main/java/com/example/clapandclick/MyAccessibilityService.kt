@@ -41,7 +41,7 @@ class MyAccessibilityService: AccessibilityService() {
 
     override fun onDestroy() {
         super.onDestroy()
-        unregisterReceiver(broadcastReceiver)  // Don't forget to unregister the receiver
+        unregisterReceiver(broadcastReceiver)  
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
