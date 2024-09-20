@@ -63,7 +63,7 @@ class MyAccessibilityService: AccessibilityService() {
                 // Make the ImageView untouchable and non-movable
                 setIsClickable(false, pointerImg)
 
-                // Perform global click
+                // click
                 val clickPerformed = performGlobalClick(
                     layoutParams.x - (toCenterPoint / 2),
                     layoutParams.y + navigationBarHeight - (toCenterPoint / 2)
