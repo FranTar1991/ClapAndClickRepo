@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ClapAndClick</string>
+    <string name="accessibility_service_label">My accessibility service\n</string>
+    <string name="accessibility_service_description">Used to make clicks on the user screen</string>
+</resources>
