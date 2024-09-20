@@ -54,13 +54,12 @@ class MyAccessibilityService: AccessibilityService() {
 
     private val broadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-   
+
             val statusBarHeight = getStatusBarHeight()
             val navigationBarHeight = getNavigationBarHeight()
             val toCenterPoint = ((48f * density)/ 2).toInt()
 
             pointerImg.post {
-                // Make the ImageView untouchable and non-movable
                 setIsClickable(false, pointerImg)
 
                 // Perform global click
