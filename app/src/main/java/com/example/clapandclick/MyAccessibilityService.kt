@@ -99,11 +99,11 @@ class MyAccessibilityService: AccessibilityService() {
     }
 
     private fun createFloatingWidget() {
-        // Inflate your widget layout
+
         floatingWidget = LayoutInflater.from(this).inflate(R.layout.floating_widget, null)
         pointerImg = floatingWidget.findViewById(R.id.pointer_Img)
 
-        // Configure the layout parameters for the widget
+
         layoutParams = WindowManager.LayoutParams(
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.WRAP_CONTENT,
